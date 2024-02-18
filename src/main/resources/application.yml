@@ -45,7 +45,9 @@ management:
         include: '*'
   server:
     port: 8095
-
+telegram:
+  bot:
+    token: "6480682699:AAHhpLTSWH__xjjDz-VdPWUgwc-9GAFG9YY"
 information:
   application:
     base_url_server:

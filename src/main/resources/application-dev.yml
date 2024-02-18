@@ -16,6 +16,3 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: true
-telegram:
-  bot:
-    token: "6366579590:AAH6f4tXdNmANmB_xbWSACzV4D3ri0A7Mfw"

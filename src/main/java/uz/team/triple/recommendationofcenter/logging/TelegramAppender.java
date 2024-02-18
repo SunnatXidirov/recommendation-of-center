@@ -15,9 +15,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TelegramAppender extends AppenderBase<LoggingEvent> {
-    private static final String exceptionsGroupID = "-1002110112168";
-    private static final String logsGroupID = "-1002110112168";
-    private final TelegramBot telegramBot = new TelegramBot("6366579590:AAH6f4tXdNmANmB_xbWSACzV4D3ri0A7Mfw");
+    private static final String exceptionsGroupID = "-1002074405338";
+    private static final String logsGroupID = "-1002074405338";
+    private final TelegramBot telegramBot = new TelegramBot("6480682699:AAHhpLTSWH__xjjDz-VdPWUgwc-9GAFG9YY");
 
     public TelegramAppender() {
         addFilter(new Filter<>() {
