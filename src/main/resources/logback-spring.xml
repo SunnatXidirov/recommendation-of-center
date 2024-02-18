@@ -17,7 +17,7 @@
         </encoder>
     </appender>
 
-    <appender name="TelegramAppender" class="uz.letstrip.userservice.logging.TelegramAppender">
+    <appender name="TelegramAppender" class="uz.team.triple.recommendationofcenter.logging.TelegramAppender">
     </appender>
 
     <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -39,7 +39,7 @@
         <appender-ref ref="ASYNC"/>
     </root>
 
-    <logger name="uz.letstrip.userservice" level="info" additivity="false">
+    <logger name="uz.team.triple.recommendationofcenter" level="info" additivity="false">
         <appender-ref ref="ASYNC"/>
     </logger>
 </configuration>

@@ -10,7 +10,7 @@ spring:
       password: user1234
       roles: USER
   application:
-    name: user-service-letstrip
+    name: recommendation-of-center
   freemarker:
     check-template-location: true
 server:
@@ -48,8 +48,8 @@ management:
 
 information:
   application:
-    base_url_server: "http://backend.coreteam.uz:8095"
-    base_url_local: "http://localhost:8095"
+    base_url_server:
+    base_url_local:
   sending_messages:
-    phone_url: "http://backend.coreteam.uz:8091/api/v1/sms/send"
-    email_url: "http://backend.coreteam.uz:8091/api/v1/notification/send/email?sender=LETSTRIP"
+    phone_url:
+    email_url:

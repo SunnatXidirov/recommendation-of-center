@@ -93,7 +93,9 @@ public class GlobalExceptionHandler {
     @NotNull
     private String buildMessage(Exception e, HttpServletRequest request) {
         return STR."""
+                @xidi1ov
                 @Mavlonovich_java
+                @BKuldashov
                 Attention! ⚠️⚠️⚠️
                 Host:\{getHost(request)}
                 IP Address:\{getClientIpAddress(request)}

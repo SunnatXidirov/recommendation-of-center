@@ -34,7 +34,6 @@ public class OpenAPIConfig {
             public void addCorsMappings(@NotNull CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("*");
-//                        .allowedOrigins("https://billing.coreteam.uz", "http://localhost:8097");
             }
         };
     }
@@ -43,21 +42,20 @@ public class OpenAPIConfig {
     public OpenAPI springOpenAPIProd() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("User service powered by Core Team")
-                        .description("REST API for User Service letstrip")
+                        .title("User service powered by RAC")
+                        .description("REST API for The Recommendation of Center")
                         .version("1")
                         .contact(new Contact()
-                                .name("Abdumomin Shamshiddinov")
-                                .email("shamshiddinovabdumomin2003@gmail.com")
-                                .url("https://github.com/CORETEAM8800"))
+                                .name("Xidirov Sunnat")
+                                .email("@gmail.com")
+                                .url("https://github.com/SunnatXidirov"))
                         .license(new License()
                                 .name("Apache 2.0")
                                 .url("https://springdoc.org"))
                         .termsOfService("https://swagger.io/terms/"))
                 .servers(List.of(
-                        new Server().url(serverUrl).description("Backend Coreteam Server server"),
-                        new Server().url(localUrl).description("Local server"),
-                        new Server().url("http://192.168.1.131:8095").description("Abdumomin's server")
+                        new Server().url(serverUrl).description("Production server"),
+                        new Server().url(localUrl).description("Local server")
                 )).addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components((new Components()
                         .addSecuritySchemes("bearerAuth", new SecurityScheme()
