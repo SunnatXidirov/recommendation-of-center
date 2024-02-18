@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username:
+    password:
+    url:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: true
+telegram:
+  bot:
+    token: "6366579590:AAH6f4tXdNmANmB_xbWSACzV4D3ri0A7Mfw"

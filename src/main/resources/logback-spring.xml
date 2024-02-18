@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+<!--    <property name="LOGS" value="${FIN_LOGS_PATH}"/>-->
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="DATA_MASK"/>
+<!--        <appender-ref ref="RollingFile"/>-->
+        <appender-ref ref="TelegramAppender"/>
+    </appender>
+
+    <appender name="DATA_MASK" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %green(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%10.10C): %msg%n%throwable
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="TelegramAppender" class="uz.letstrip.userservice.logging.TelegramAppender">
+    </appender>
+
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/spring-boot-logger.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOGS}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+                <maxHistory>10</maxHistory>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="ASYNC"/>
+    </root>
+
+    <logger name="uz.letstrip.userservice" level="info" additivity="false">
+        <appender-ref ref="ASYNC"/>
+    </logger>
+</configuration>

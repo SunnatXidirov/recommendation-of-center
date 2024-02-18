@@ -1,0 +1,55 @@
+spring:
+  profiles:
+    active: dev
+  sql:
+    init:
+      mode: always
+  security:
+    user:
+      name: user
+      password: user1234
+      roles: USER
+  application:
+    name: user-service-letstrip
+  freemarker:
+    check-template-location: true
+server:
+  port: 8095
+  http2:
+    enabled: true
+  compression:
+    enabled: true
+    min-response-size: 4KB
+
+springdoc:
+  swagger-ui:
+    try-it-out-enabled: on
+
+logging:
+  level:
+    root: info
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    startup:
+      enabled: true
+  health:
+    diskspace:
+      enabled: true
+      threshold: 1MB
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  server:
+    port: 8095
+
+information:
+  application:
+    base_url_server: "http://backend.coreteam.uz:8095"
+    base_url_local: "http://localhost:8095"
+  sending_messages:
+    phone_url: "http://backend.coreteam.uz:8091/api/v1/sms/send"
+    email_url: "http://backend.coreteam.uz:8091/api/v1/notification/send/email?sender=LETSTRIP"
